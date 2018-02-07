@@ -6,7 +6,7 @@ New-Item -path 'C:\\chef\\ohai\\hints' -type directory
 Add-Content 'C:\\chef\\ohai\\hints\\ec2.json' '{}'
 
 Write-Output "Writing out Kitchen Template"
-Invoke-WebRequest "https://raw.githubusercontent.com/chef-training/chefdk-image/master/test_kitchen-templates/kitchen-template.yml" -OutFile 'C:\\Users\\Administrator\kitchen-template.yml'
+Invoke-WebRequest "https://raw.githubusercontent.com/gsreynolds/chefdk-image/eu-west/test_kitchen-templates/kitchen-template.yml" -OutFile 'C:\\Users\\Administrator\kitchen-template.yml'
 
 Write-Output "Install Chocolately"
 Set-ExecutionPolicy ByPass -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))

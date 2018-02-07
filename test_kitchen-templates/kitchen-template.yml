@@ -4,10 +4,10 @@ driver:
   retryable_tries: 120
   retryable_sleep: 5
   aws_ssh_key_id: training-ec2-keypair
-  region: us-east-1
-  availability_zone: us-east-1e
-  security_group_ids: sg-d7a564ae
-  subnet_id: subnet-fc6a4cc6
+  region: eu-west-1
+  availability_zone: eu-west-1b
+  security_group_ids: sg-e9f9bc91
+  subnet_id: subnet-8520b7f2
   instance_type: m3.large
   tags:
     # Replace YOURNAME and YOURCOMPANY here
@@ -25,7 +25,7 @@ verifier:
 platforms:
   - name: windows-2012r2
     driver_config:
-      image_id: ami-4a80ac20
+      image_id: ami-bd87eec4
     transport:
       username: Administrator
       password: Cod3Can!

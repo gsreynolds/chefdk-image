@@ -2,15 +2,16 @@
   "variables": {
     "aws_access_key": "",
     "aws_secret_key": "",
-    "aws_keypair": "{{env `TRAINING_AWS_KEYPAIR`}}"
+    "aws_keypair_name": "training-ec2-keypair",
+    "aws_keypair_file": "{{env `TRAINING_AWS_KEYPAIR`}}"
   },
   "builders": [{
     "type": "amazon-ebs",
     "communicator": "winrm",
-    "region": "us-east-1",
+    "region": "eu-west-1",
     "user_data_file":"./scripts/winrm.ps1",
     "winrm_port": 5985,
-    "source_ami": "ami-817d48eb",
+    "source_ami": "ami-cc821eb5",
     "instance_type": "m3.large",
     "winrm_username": "Administrator",
     "ami_name": "Essentials - Windows 2012 Node - 1.0.2"
