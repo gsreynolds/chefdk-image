@@ -5,3 +5,6 @@ Invoke-WebRequest "https://raw.githubusercontent.com/gsreynolds/chefdk-image/che
 
 Write-Output "Setting Administrator Password"
 ([ADSI]'WinNT://localhost/Administrator, user').psbase.Invoke('SetPassword', 'Cod3Can!')
+
+git config --global user.email "chef-training@example.com"
+git config --global user.name "Chef Training"
