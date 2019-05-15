@@ -1,0 +1,29 @@
+{
+  "variables": {
+    "aws_profile": "{{env `AWS_PROFILE`}}",
+    "aws_keypair": "{{env `TRAINING_AWS_KEYPAIR`}}",
+    "chef_version": "14"
+  },
+  "builders": [
+    {
+      "ssh_username": "chef",
+      "ssh_password": "Cod3Can!",
+      "type": "amazon-ebs",
+      "ssh_pty": true,
+      "region": "us-east-1",
+      "instance_type": "m3.medium",
+      "source_ami": "ami-05e6876ba54c79c28",
+      "ami_name": "Chef Jumpstart - ChefConf 2019 - CentOS v0.1.0 - No Chef",
+      "tags": {}
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "inline": [
+        "echo 'The base image updated cloud-init. Waiting for cloud-init to finish (~ 5 minutes).'",
+        "while [ ! -f /var/lib/cloud/instance/boot-finished ]; do echo 'Waiting 15 seconds for cloud-init...'; sleep 15; done"
+      ]
+    }
+  ]
+}
